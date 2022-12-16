@@ -18,5 +18,45 @@ label {
 }
 
 .error {
-  border: 1px solid red !important;
+  border: 1px solid #e74c3c !important;
+}
+
+.error-message {
+  color: #e74c3c;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-form {
+  background: #fff;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.form-control {
+  padding: 8px !important;
+  height: auto !important;
+}
+
+.customBtn {
+  width: 100%;
+  background: rgba(5, 156, 203, 1) !important;
+}
+
+.customBtn:hover {
+  background: rgba(89, 186, 192, 1) !important;
 }

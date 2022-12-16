@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export const postUserInfo = async (data) => {
+export const postUserInfo = async (data, url) => {
   try {
     await axios({
       method: 'POST',
-      url: 'https://www.toptal.com/developers/postbin/1671098516871-8350290840025',
+      url: 'https://www.toptal.com/developers/postbin/1671212411827-8442776349838',
       withCredentials: false,
       params: {
         ...data,
