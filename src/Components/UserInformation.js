@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { postUserInfo } from '../api/api';
+import Input from './Input';
 
 function UserInformation() {
   const [succesMessage, setSuccessMessage] = useState(null);
@@ -35,6 +36,10 @@ function UserInformation() {
     resetForm();
   };
 
+  setTimeout(() => {
+    setSuccessMessage(null);
+  }, 10000);
+
   const onUploadHandler = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -47,10 +52,6 @@ function UserInformation() {
       reader.readAsDataURL(file);
     }
   };
-
-  setTimeout(() => {
-    setSuccessMessage(null);
-  }, 3000);
 
   const validateInputs = yup.object().shape({
     userName: yup
@@ -99,46 +100,29 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col sm={6}>
-                <label htmlFor="userName" className="form-label">
-                  {formik.touched.userName && formik.errors.userName ? (
-                    <div className="error-message">
-                      {formik.errors.userName}
-                    </div>
-                  ) : (
-                    'Username'
-                  )}
-                </label>
-                <Form.Control
-                  id="userName"
-                  type="text"
+                <Input
                   name="userName"
-                  autoComplete="off"
+                  type="text"
+                  touched={formik.touched.userName}
+                  errors={formik.errors.userName}
+                  labelName="Username"
+                  labelError={formik.errors.userName}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userName ? 'error' : ''}
                   value={formik.values.userName}
                 />
               </Col>
 
               <Col sm={6}>
-                <label htmlFor="userEmail" className="form-label">
-                  {formik.touched.userEmail && formik.errors.userEmail ? (
-                    <div className="error-message">
-                      {formik.errors.userEmail}
-                    </div>
-                  ) : (
-                    'Email'
-                  )}
-                </label>
-                <Form.Control
-                  type="email"
+                <Input
                   name="userEmail"
-                  id="userEmail"
-                  autoComplete="off"
-                  placeholder="Enter your email"
+                  type="email"
+                  touched={formik.touched.userEmail}
+                  errors={formik.errors.userEmail}
+                  labelName="Email"
+                  labelError={formik.errors.userEmail}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userEmail ? 'error' : ''}
                   value={formik.values.userEmail}
                 />
               </Col>
@@ -148,45 +132,29 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col sm={6}>
-                <label htmlFor="userPassword" className="form-label">
-                  {formik.touched.userPassword && formik.errors.userPassword ? (
-                    <div className="error-message">
-                      {formik.errors.userPassword}
-                    </div>
-                  ) : (
-                    'Password'
-                  )}
-                </label>
-                <Form.Control
-                  type="password"
+                <Input
                   name="userPassword"
-                  id="userPassword"
-                  autoComplete="off"
+                  type="password"
+                  touched={formik.touched.userPassword}
+                  errors={formik.errors.userPassword}
+                  labelName="Password"
+                  labelError={formik.errors.userPassword}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userPassword ? 'error' : ''}
                   value={formik.values.userPassword}
                 />
               </Col>
 
               <Col sm={6}>
-                <label htmlFor="userDate" className="form-label">
-                  {formik.touched.userDate && formik.errors.userDate ? (
-                    <div className="error-message">
-                      {formik.errors.userDate}
-                    </div>
-                  ) : (
-                    'Date'
-                  )}
-                </label>
-                <Form.Control
-                  type="date"
+                <Input
                   name="userDate"
-                  id="userDate"
-                  autoComplete="off"
+                  type="date"
+                  touched={formik.touched.userDate}
+                  errors={formik.errors.userDate}
+                  labelName="Date"
+                  labelError={formik.errors.userDate}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userDate ? 'error' : ''}
                   value={formik.values.userDate}
                 />
               </Col>
@@ -196,41 +164,24 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col sm={6}>
-                <label htmlFor="userTel" className="form-label">
-                  {formik.touched.userTel && formik.errors.tel ? (
-                    <div className="error-message">{formik.errors.userTel}</div>
-                  ) : (
-                    'Telephone'
-                  )}
-                </label>
-                <Form.Control
-                  type="tel"
+                <Input
                   name="userTel"
-                  id="userTel"
-                  autoComplete="off"
+                  type="tel"
+                  touched={formik.touched.userTel}
+                  errors={formik.errors.userTel}
+                  labelName="Telephone"
+                  labelError={formik.errors.userTel}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userTel ? 'error' : ''}
                   value={formik.values.userTel}
                 />
               </Col>
               <Col sm={6}>
-                <label htmlFor="userFile" className="form-label">
-                  {formik.touched.userFile && formik.errors.userFile ? (
-                    <div className="error-message">
-                      {formik.errors.userFile}
-                    </div>
-                  ) : (
-                    'File'
-                  )}
-                </label>
-                <Form.Control
-                  type="file"
+                <Input
                   name="userFile"
-                  id="userFile"
-                  autoComplete="off"
+                  type="file"
+                  labelName="Telephone"
                   onChange={onUploadHandler}
-                  className={formik.errors.userFile ? 'error' : ''}
                   value={formik.values.userFile}
                 />
               </Col>
@@ -240,41 +191,29 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col sm={6}>
-                <label htmlFor="userAge" className="form-label">
-                  {formik.touched.userAge && formik.errors.userAge ? (
-                    <div className="error-message">{formik.errors.userAge}</div>
-                  ) : (
-                    'Age'
-                  )}
-                </label>
-                <Form.Control
-                  type="number"
+                <Input
                   name="userAge"
-                  id="userAge"
-                  autoComplete="off"
+                  type="number"
+                  touched={formik.touched.userAge}
+                  errors={formik.errors.userAge}
+                  labelName="Age"
+                  labelError={formik.errors.userAge}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userAge ? 'error' : ''}
                   value={formik.values.userAge}
                 />
               </Col>
 
               <Col sm={6}>
-                <label htmlFor="userUrl" className="form-label">
-                  {formik.touched.userUrl && formik.errors.userUrl ? (
-                    <div className="error-message">{formik.errors.userUrl}</div>
-                  ) : (
-                    'URL'
-                  )}
-                </label>
-                <Form.Control
-                  type="url"
+                <Input
                   name="userUrl"
-                  id="userUrl"
-                  autoComplete="off"
+                  type="url"
+                  touched={formik.touched.userUrl}
+                  errors={formik.errors.userUrl}
+                  labelName="URL"
+                  labelError={formik.errors.userUrl}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userUrl ? 'error' : ''}
                   value={formik.values.userUrl}
                 />
               </Col>
@@ -284,24 +223,15 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col>
-                <label htmlFor="userMessage" className="form-label">
-                  {formik.touched.userMessage && formik.errors.userMessage ? (
-                    <div className="error-message">
-                      {' '}
-                      {formik.errors.userMessage}
-                    </div>
-                  ) : (
-                    'Message'
-                  )}
-                </label>
-                <Form.Control
-                  as="textarea"
+                <Input
                   name="userMessage"
-                  id="userMessage"
-                  autoComplete="off"
+                  as="textarea"
+                  touched={formik.touched.userMessage}
+                  errors={formik.errors.userMessage}
+                  labelName="Message"
+                  labelError={formik.errors.userMessage}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={formik.errors.userMessage ? 'error' : ''}
                   value={formik.values.userMessage}
                 />
               </Col>
