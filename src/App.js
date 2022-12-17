@@ -1,6 +1,5 @@
 import './App.css';
 import UserInformation from './Components/UserInformation';
-import UserInformationSecond from './Components/UserInformationSecond';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
@@ -12,8 +11,7 @@ function App() {
       <Container>
         <Row>
           <Col className="d-flex justify-content-center">
-            {/* <UserInformation /> */}
-            <UserInformationSecond />
+            <UserInformation />
           </Col>
         </Row>
       </Container>

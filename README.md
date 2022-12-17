@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Getting Started with UserForm App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Click the code button and copy the repository URL, then open the terminal and type git clone and the copied URL. After the repositery is finished type in terminal npm i to isntall node_modules for this project.
 
-## Available Scripts
+## How to start prohect
 
-In the project directory, you can run:
+To start the project, please type npm start in the terminal and the project will open a tab in your browser with localhost:3000 (3000 is the port, if 3000 is used, the project will start with another port, for example 3001)
 
-### `npm start`
+## Which inputs are included
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+in UserForm I used almost all HTML form inputs, without types:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+month;
+radio;
+range;
+reset;
+search;
+time;
+week;
+datetime-local;
+color;
+checkbox;
 
-### `npm test`
+I used:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+text;
+email;
+date;
+number;
+file;
+url;
+password;
+tel;
+textarea;
 
-### `npm run build`
+All inputs are required withoud file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What libraries are used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+formik, yup, axios, bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to use UserForm App
 
-### `npm run eject`
+The api,js file includes a request to toptal.com/developers/postbin If you are going to use this application, please insert the URL that will generate the toptal PostBin. Go to toptal.com/developers/postbin and click the blue Create Bin button, then copy the generated link "POST https://www.toptal.com/developers/postbin/your generated id" and paste that url into the api.js url.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## What design are used for UserForm App
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I used a design I created myself, with a simple gradient background, a boxed shadow for form card, and standard bootstrap designed components.

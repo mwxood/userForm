@@ -9,6 +9,7 @@ import { postUserInfo } from '../api/api';
 
 function UserInformation() {
   const [succesMessage, setSuccessMessage] = useState(null);
+  const [file, setFile] = useState(null);
 
   const initialValues = {
     userName: '',
@@ -28,9 +29,23 @@ function UserInformation() {
     /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
 
   const onSubmitHandler = (values, { resetForm }) => {
+    values.userFile = file;
     postUserInfo(values);
     setSuccessMessage('Your information has been send successfully');
     resetForm();
+  };
+
+  const onUploadHandler = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      setFile(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   };
 
   setTimeout(() => {
@@ -82,7 +97,7 @@ function UserInformation() {
         )}
         <Form onSubmit={formik.handleSubmit}>
           <Form.Group className="mb-3">
-            <Row style={{ position: 'relative' }}>
+            <Row>
               <Col sm={6}>
                 <label htmlFor="userName" className="form-label">
                   {formik.touched.userName && formik.errors.userName ? (
@@ -214,8 +229,7 @@ function UserInformation() {
                   name="userFile"
                   id="userFile"
                   autoComplete="off"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
+                  onChange={onUploadHandler}
                   className={formik.errors.userFile ? 'error' : ''}
                   value={formik.values.userFile}
                 />
@@ -226,7 +240,7 @@ function UserInformation() {
           <Form.Group className="mb-3">
             <Row>
               <Col sm={6}>
-                <label htmlFor="file" className="form-label">
+                <label htmlFor="userAge" className="form-label">
                   {formik.touched.userAge && formik.errors.userAge ? (
                     <div className="error-message">{formik.errors.userAge}</div>
                   ) : (
