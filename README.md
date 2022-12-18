@@ -46,3 +46,11 @@ The api,js file includes a request to toptal.com/developers/postbin If you are g
 ## What design are used for UserForm App
 
 I used a design I created myself, with a simple gradient background, a boxed shadow for form card, and standard bootstrap designed components.
+
+## Unit test with jest
+
+I made tests for:
+check if inputs exists,
+checking the required inputs,
+checking for correct data,
+check for data submission,,
