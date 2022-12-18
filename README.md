@@ -53,4 +53,6 @@ I made tests for:
 check if inputs exists,
 checking the required inputs,
 checking for correct data,
-check for data submission,,
+check for data submission,
+
+## Happy checking and hacking ;)
