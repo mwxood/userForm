@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const postUserInfo = async (data, url) => {
+export const postUserInfo = async (data) => {
   try {
     await axios({
       method: 'POST',
