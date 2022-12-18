@@ -45,7 +45,6 @@ const UserForm = (props) => {
 
     reader.onload = function () {
       setFile(reader.result);
-      console.log(reader.result);
     };
 
     if (file) {
