@@ -4,7 +4,7 @@ export const postUserInfo = async (data, url) => {
   try {
     await axios({
       method: 'POST',
-      url: 'https://www.toptal.com/developers/postbin/1671287444159-1038259777706',
+      url: 'https://www.toptal.com/developers/postbin/1671304243373-3705750394146',
       withCredentials: false,
       params: {
         ...data,

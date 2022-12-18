@@ -2,7 +2,7 @@
 
 Click the code button and copy the repository URL, then open the terminal and type git clone and the copied URL. After the repositery is finished type in terminal npm i to isntall node_modules for this project.
 
-## How to start prohect
+## How to start project
 
 To start the project, please type npm start in the terminal and the project will open a tab in your browser with localhost:3000 (3000 is the port, if 3000 is used, the project will start with another port, for example 3001)
 

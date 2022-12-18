@@ -1,11 +1,11 @@
 import Form from 'react-bootstrap/Form';
 
-const Input = (props) => {
+const Field = (props) => {
   return (
     <>
       <label htmlFor={props.name} className="form-label">
         {props.touched && props.errors ? (
-          <div className="error-message">{props.errors}</div>
+          <span className="error-message">{props.errors}</span>
         ) : (
           props.labelName
         )}
@@ -18,6 +18,7 @@ const Input = (props) => {
         autoComplete="off"
         onChange={props.onChange}
         onBlur={props.onBlur}
+        data-testid={props.dataTestId}
         className={props.errors ? 'error' : ''}
         value={props.value}
       />
@@ -25,4 +26,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default Field;
