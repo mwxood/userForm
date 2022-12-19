@@ -33,7 +33,7 @@ password;
 tel;
 textarea;
 
-All inputs are required withoud file.
+All inputs are required without file.
 
 ## What libraries are used
 
@@ -50,11 +50,16 @@ I used a design I created myself, with a simple gradient background, a boxed sha
 ## Unit test with Jest
 
 I made tests for:
-check if inputs exists,
-checking the required inputs,
-checking for correct data,
-check for data submission,
 
-<ul><li>aaaaa</li></ul>
+
+
+
+
+<ul>
+  <li>check if inputs exists,</li>
+  <li>checking the required inputs,</li>
+  <li>checking for correct data,</li>
+  <li>check for data submission,</li>
+</ul>
 
 ### Happy checking and hacking ;)
