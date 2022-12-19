@@ -47,7 +47,7 @@ The api,js file includes a request to toptal.com/developers/postbin If you are g
 
 I used a design I created myself, with a simple gradient background, a boxed shadow for form card, and standard bootstrap designed components.
 
-## Unit test with jest
+## Unit test with Jest
 
 I made tests for:
 check if inputs exists,
